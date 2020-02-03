@@ -37,7 +37,8 @@
             id="secret"
             class="form-control"
             ngModel
-            name="secret">
+            name="secret"
+            [ngModel]="defaultQuestion">
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
