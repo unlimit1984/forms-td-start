@@ -5,7 +5,10 @@
       <!--form (ngSubmit)="onSubmit(f)" #f="ngForm"-->
       <!--2nd option-->
       <form (ngSubmit)="onSubmit()" #f="ngForm">
-        <div id="user-data">
+        <div
+          id="user-data"
+          ngModelGroup="userData"
+          #userData="ngModelGroup">
           <div class="form-group">
             <label for="username">Username</label>
             <input
@@ -31,6 +34,7 @@
             <span *ngIf="!email.valid && email.touched" class="help-block">Please enter a valid email!</span>
           </div>
         </div>
+        <p *ngIf="!userData.valid && userData.touched">User Data is invalid!</p>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
           <select
