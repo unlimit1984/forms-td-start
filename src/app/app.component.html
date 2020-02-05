@@ -40,7 +40,6 @@
           <select
             id="secret"
             class="form-control"
-            ngModel
             name="secret"
             [ngModel]="defaultQuestion">
             <option value="pet">Your first Pet?</option>
@@ -55,6 +54,17 @@
             [(ngModel)]="answer"></textarea>
         </div>
         <p>Your reply: {{ answer}}</p>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              ngModel
+              [value]="gender"
+              required>
+            {{ gender }}
+          </label>
+        </div>
         <button
           class="btn btn-primary"
           type="submit"
