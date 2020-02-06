@@ -15,6 +15,23 @@ export class AppComponent {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    // Nice but not a good approach
+    // this.signupForm.setValue({
+    //   userData: {
+    //     username: suggestedName,
+    //     email: ''
+    //   },
+    //   secret: 'pet',
+    //   questionAnswer: '',
+    //   gender: 'male'
+    // });
+    this.signupForm.form.patchValue({
+      userData: {
+        username: suggestedName,
+        email: ''
+      }
+
+    });
   }
 
   // 1st option
